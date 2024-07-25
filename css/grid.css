@@ -1,0 +1,9 @@
+/*Grid conforme figma*/
+.container{
+    width: 100%;
+    max-width: 124.6rem; 
+    margin: 0 auto;
+    padding: 0 1.5rem; 
+    /*Por conta de estarmos adicionando 15px de padding dentro da nossa grid de 1216 conforme no figma,
+    temos que aumentar em 30px o nossa área, então ficando 1216+30=1246px -> 124.6rem*/
+}
