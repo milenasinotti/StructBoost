@@ -80,15 +80,24 @@ header nav ul li a:hover{
 /*Seletor before, aqui add o line svg direto no css*/
 .s-hero .text h1::before{
     content: ''; /*permite o stroke aparecer*/
-    width: 100%;
     max-width: 59.9rem;
     height: 2.2rem;
-    background: url(../imgs/stroke.svg) no-repeat center center;
+    background: url(../imgs/stroke.svg) no-repeat left center; /*antes era center center, mas para animacao fluir da linha left para n segurar o bg*/
     position: absolute;
     left: 3.9rem;
     bottom: -5px;
     z-index: -1; /*faz o stroke aparecer na camada -1 ao h1*/
- 
+    animation: drawLine 1s 0.5s ease-in forwards; /*1s de tempo de animacao e 1s de delay forwards tipo status final para*/
+}
+
+/*animacao da linha aparecendo, da esq para dir e ficar estatico no final*/
+@keyframes drawLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 .s-hero .text p{
@@ -104,7 +113,22 @@ header nav ul li a:hover{
     position: absolute;
     left: 5.5rem;
     bottom: 1.7rem;
+    animation: floating 3s ease-in-out infinite;
 }
+
+/*animacao da seta, com 3 status de posicao x*/
+@keyframes floating {
+    0% {
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(15px);
+    }
+    100%{
+        transform: translate(0px);
+    }
+}
+
 
 .s-hero .ilustra{
     padding: 0 1.5rem;
