@@ -28,7 +28,7 @@
 }
 
 .item-digital{
-    flex-grow: 1;
+    width: 100%;
     max-width: 38.4rem;
 }
 
